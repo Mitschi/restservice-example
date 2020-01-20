@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/Mitschi/restservice-example.svg?branch=master)](https://travis-ci.org/Mitschi/restservice-example)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=Mitschi_restservice-example&metric=bugs)](https://sonarcloud.io/dashboard?id=Mitschi_restservice-example)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=Mitschi_restservice-example&metric=code_smells)](https://sonarcloud.io/dashboard?id=Mitschi_restservice-example)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=Mitschi_restservice-example&metric=coverage)](https://sonarcloud.io/dashboard?id=Mitschi_restservice-example)

@@ -5,7 +5,7 @@ jdk:
 #  - openjdk10
 
 before_script:
-  -   - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 script:
-  - ./mvnw clean package
+  - mvn clean package

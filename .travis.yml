@@ -6,5 +6,12 @@ jdk:
 install:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
+addons:
+  sonarcloud:
+    organization: "mitschi"
+    token:
+      secure: "BXg724MHMNKm0sVE4aC0OBmnZMUnRL4AaMaSPJIfbNKmIpgqqQeSqrNkh6+/S4ksjThsNpXmrurToUgzzCb/AUJEdG4y7GYFiU4XE+Pg7IEAK77hSguTfifq3xXygqW2FE1/MFBrWWA3pye9kp+gCtH9j//BFTmKRqFnD972fxKEmL5FaToalEBruCqvO5qZXLS0BZ14eAwm2U8iHuGWAxp15YHQ5qBuGgjsmvQNjuKCDlyERjbNWuaSct9rvWxU4i88bX0Z81wkBLFeUvRZex3cqzyWcV4AsgLxMCm0TdnQH6jMEK8SA4BYYwhJ/evGTK6jqFqKw+EgnLOfLCNDv2A2tijEND1VvCA9GGopzrZ8XlYqobrtjONsYUkcFpIvFIF/koTBhVaPAYCsiKCWKSUvXDx9WATL8N+14wd9kP3Jry0V4mrCN6xsVNmuSrnDLozYRzOH7oKMlLsG0l4YaP3D2yeKTFF8Jl0jgoc5H0zCoLDyaM6iCxeFFxuftCmBy6WBwjBfsITMDGGBfT8AfoQu2n48ow0SklfwXbcMzFrHId4W3qMUSScgTDoXwQBJyAp46bo0U13DOum88Ao0eoVyht246GUjlvRRD//UMtwqEIzK8SIQaqufM9ooofHb0iosKdBaZwhtTnkDNqi9cU8LzbwrmuJXtUNXDrlK1lg="
+
 script:
-  - mvn clean package
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Mitschi_restservice-example

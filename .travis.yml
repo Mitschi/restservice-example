@@ -2,9 +2,9 @@ language: java
 
 jdk:
   - oraclejdk8
-  - oraclejdk10
+#  - oraclejdk10
   - openjdk8
-  - openjdk10
+#  - openjdk10
 
 before_script:
   -   - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V

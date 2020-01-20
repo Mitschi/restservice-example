@@ -3,7 +3,7 @@ language: java
 jdk:
   - openjdk8
 
-before_script:
+install:
   - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 script:

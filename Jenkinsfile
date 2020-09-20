@@ -28,5 +28,30 @@ pipeline {
                 //}
             //}
         }
+        stage('Unit Tests') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+        stage('Static Analysis') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+        stage('Integration Tests') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+        stage('Performance Tests') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
     }
 }

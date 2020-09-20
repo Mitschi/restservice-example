@@ -52,7 +52,7 @@ pipeline {
                 }
                 stage('Mutation Testing') {
                     steps {
-                        sh 'mvn clean test org.pitest:pitest-maven:mutationCoverage'
+                        sh 'mvn clean org.pitest:pitest-maven:mutationCoverage'
                     }
                     post {
                         //If Maven was able to run the tests, even if some of the test

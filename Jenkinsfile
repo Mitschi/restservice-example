@@ -5,6 +5,10 @@ pipeline {
         maven "M3"
     }
 
+    environment {
+        SONARCLOUD_TOKEN = credentials('sonarcloud-token')
+    }
+
     stages {
         stage('Build') {
             steps {
@@ -38,10 +42,10 @@ pipeline {
                     steps {
                         sh 'mvn --version'
                         //https://github.com/eclipse/che-che4z-lsp-for-cobol/pull/74/files
-                        withCredentials([string(credentialsId: 'sonarcloud-token', variable: 'SONARCLOUD_TOKEN')]) {
-                            sh 'mvn sonar:sonar -Dsonar.projectKey=Mitschi_restservice-example -Dsonar.organization=mitschi -Dsonar.host.url=https://sonarcloud.io -Dsonar.password= -Dsonar.login=${SONARCLOUD_TOKEN}'
-                            //sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Mitschi_restservice-example'
-                        }
+//                        withCredentials([string(credentialsId: 'sonarcloud-token', variable: 'SONARCLOUD_TOKEN')]) {
+                            //sh 'mvn sonar:sonar -Dsonar.projectKey=Mitschi_restservice-example -Dsonar.organization=mitschi -Dsonar.host.url=https://sonarcloud.io -Dsonar.password= -Dsonar.login=${SONARCLOUD_TOKEN}'
+                        sh 'mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar -Dsonar.projectKey=Mitschi_restservice-example -Dsonar.login=${SONARCLOUD_TOKEN}'
+//                        }
                     }
                 }
                 stage('Mutation Testing') {

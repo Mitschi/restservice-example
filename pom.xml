@@ -161,15 +161,21 @@
             <plugin>
                 <groupId>org.pitest</groupId>
                 <artifactId>pitest-maven</artifactId>
-                <version>1.4.3</version>
+                <version>1.4.9</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.pitest</groupId>
                         <artifactId>pitest-junit5-plugin</artifactId>
-                        <version>0.8</version>
+                        <version>0.12</version>
                     </dependency>
                 </dependencies>
                 <configuration>
+                    <targetClasses>
+                        <param>com.github.mitschi.restservice*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>com.github.mitschi.restservice*</param>
+                    </targetTests>
                     <outputFormats>
                         <param>HTML</param>
                         <param>XML</param>

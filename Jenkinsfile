@@ -30,7 +30,7 @@ pipeline {
                 sh 'mvn --version'
             }
         }
-        stage('Code Analysis') {
+//        stage('Code Analysis') {
 //            parallel {
                 stage('Unit Tests') {
                     steps {
@@ -64,7 +64,7 @@ pipeline {
                     }
                 }
 //            }
-        }
+//        }
 
         stage('End to End Tests') {
             parallel {

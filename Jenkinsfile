@@ -59,7 +59,7 @@ pipeline {
                         //If Maven was able to run the tests, even if some of the test
                         //failed, record the test results and archive the jar file.
                         success {
-                            pitmutation '**/target/pit-reports/**/mutations.xml'
+                            pitmutation killRatioMustImprove: false, minimumKillRatio: 50.0, mutationStatsFile: '**/target/pit-reports/**/mutations.xml'
                             archiveArtifacts 'target/*.jar'
                         }
                     }

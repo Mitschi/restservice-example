@@ -49,7 +49,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-<!--            <scope>runtime</scope>-->
+            <!--            <scope>runtime</scope>-->
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -74,15 +74,15 @@
         </dependency>
 
 
-<!--        <dependency>-->
-<!--            <groupId>pl.project13.maven</groupId>-->
-<!--            <artifactId>git-commit-id-plugin</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>junit</groupId>-->
-<!--            <artifactId>junit</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>pl.project13.maven</groupId>-->
+        <!--            <artifactId>git-commit-id-plugin</artifactId>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>junit</groupId>-->
+        <!--            <artifactId>junit</artifactId>-->
+        <!--            <scope>test</scope>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
@@ -169,7 +169,12 @@
                         <version>0.8</version>
                     </dependency>
                 </dependencies>
-
+                <configuration>
+                    <outputFormats>
+                        <param>HTML</param>
+                        <param>XML</param>
+                    </outputFormats>
+                </configuration>
             </plugin>
         </plugins>
     </build>

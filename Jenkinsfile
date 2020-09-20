@@ -52,14 +52,14 @@ pipeline {
                 }
                 stage('Mutation Testing') {
                     steps {
-                        sh 'mvn clean org.pitest:pitest-maven:mutationCoverage'
+                        sh 'mvn clean test org.pitest:pitest-maven:mutationCoverage'
                     }
                     post {
                         //If Maven was able to run the tests, even if some of the test
                         //failed, record the test results and archive the jar file.
                         success {
                             pitmutation killRatioMustImprove: false, minimumKillRatio: 50.0, mutationStatsFile: '**/target/pit-reports/**/mutations.xml'
-                            archiveArtifacts 'target/*.jar'
+//                            archiveArtifacts 'target/*.jar'
                         }
                     }
                 }

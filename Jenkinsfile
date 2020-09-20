@@ -28,24 +28,33 @@ pipeline {
                 //}
             //}
         }
-        stage('Unit Tests') {
-            steps {
-                sh 'mvn --version'
+        stage('Code Analysis') {
+            parallel {
+                stage('Unit Tests') {
+                    steps {
+                        sh 'mvn --version'
+                    }
+                }
+                stage('Static Analysis') {
+                    steps {
+                        sh 'mvn --version'
+                    }
+                }
             }
         }
-        stage('Static Analysis') {
-            steps {
-                sh 'mvn --version'
-            }
-        }
-        stage('Integration Tests') {
-            steps {
-                sh 'mvn --version'
-            }
-        }
-        stage('Performance Tests') {
-            steps {
-                sh 'mvn --version'
+
+        stage('End to End Tests') {
+            parallel {
+                stage('Integration Tests') {
+                    steps {
+                        sh 'mvn --version'
+                    }
+                }
+                stage('Performance Tests') {
+                    steps {
+                        sh 'mvn --version'
+                    }
+                }
             }
         }
         stage('Deploy') {

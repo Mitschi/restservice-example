@@ -31,7 +31,7 @@ pipeline {
             }
         }
         stage('Code Analysis') {
-            parallel {
+//            parallel {
                 stage('Unit Tests') {
                     steps {
                         sh 'mvn clean test'
@@ -63,7 +63,7 @@ pipeline {
                         }
                     }
                 }
-            }
+//            }
         }
 
         stage('End to End Tests') {
